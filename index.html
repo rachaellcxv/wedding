@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Wedding</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: serif;
+}
+
+#cover {
+    position: fixed;
+    inset: 0;
+    background: #f8f1e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#cover h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#openButton {
+    padding: 15px 35px;
+    border: 1px solid #333;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#invitation {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="cover">
+
+    <h1>Rachael & Groom</h1>
+
+    <button id="openButton">
+        OPEN INVITATION
+    </button>
+
+</div>
+
+<audio id="music" loop>
+    <source src="wedding-song.mp3" type="audio/mpeg">
+</audio>
+
+<iframe
+    id="invitation"
+    src="YOUR_CANVA_LINK_HERE">
+</iframe>
+
+<script>
+
+const button = document.getElementById("openButton");
+const music = document.getElementById("music");
+const cover = document.getElementById("cover");
+const invitation = document.getElementById("invitation");
+
+button.addEventListener("click", function() {
+
+    // Start music
+    music.play();
+
+    // Hide cover
+    cover.style.display = "none";
+
+    // Show Canva invitation
+    invitation.style.display = "block";
+
+});
+
+</script>
+
+</body>
+</html>
